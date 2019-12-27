@@ -24,6 +24,7 @@ RUN apt update && apt install -y \
   jq \
   rsync \
   tar \
+  curl \
   git && \
   rm -rf /var/lib/apt/lists/*
 RUN git clone https://bitbucket.org/atlassianlabs/atlassian-bitbucket-diy-backup.git && cd atlassian-bitbucket-diy-backup && git checkout $BITBUCKET_BACKUP_SCRIPT_VERSION
