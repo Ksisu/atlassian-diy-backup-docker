@@ -3,7 +3,7 @@ INSTANCE_NAME=bitbucket
 
 BITBUCKET_HOME=/data/bitbucket_home/
 BITBUCKET_UID=$(stat -c "%u" $BITBUCKET_HOME)
-BITBUCKET_GID=$(stat -c "%g" $BITBUCKET_GOME)
+BITBUCKET_GID=$(stat -c "%g" $BITBUCKET_HOME)
 
 BACKUP_DISK_TYPE=rsync
 BACKUP_DATABASE_TYPE=postgresql
