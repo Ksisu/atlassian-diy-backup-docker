@@ -1,0 +1,18 @@
+name: Build
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build docker image for Bitbucket
+        run: docker build -t ksisu/bitbucket-diy-backup-postgres-rsync-tar:${{ github.sha }} ./bitbucket/
+      - name: Push to DockerHub
+        run: |
+          docker login -u ksisu -p ${{ secrets.DOCKER_PASSWORD }}
+          docker push ksisu/bitbucket-diy-backup-postgres-rsync-tar:${{ github.sha }}
