@@ -17,8 +17,7 @@ ENV POSTGRES_PORT=5432
 ENV CURL_OPTIONS="-L -s -f"
 
 VOLUME /data/bitbucket_home
-VOLUME /data/backup_root/bitbucket_home
-VOLUME /data/backup_root/bitbucket_db
+VOLUME /data/backup_root
 VOLUME /data/backup_archive
 
 RUN apt update && apt install -y \
