@@ -38,6 +38,6 @@ BITBUCKET_BACKUP_HOME=${BITBUCKET_BACKUP_ROOT}/bitbucket_home/
 # The path to where the backup archives are stored
 BITBUCKET_BACKUP_ARCHIVE_ROOT=/data/backup_archive
 
-CURL_OPTIONS="-L -s -f"
+# CURL_OPTIONS="-L -s -f" FROM ENV VARIABLE
 BITBUCKET_VERBOSE_BACKUP=true
 

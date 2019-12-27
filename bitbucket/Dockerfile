@@ -14,6 +14,8 @@ ENV POSTGRES_USERNAME=bitbucket
 ENV PGPASSWORD=bitbucket
 ENV POSTGRES_PORT=5432
 
+ENV CURL_OPTIONS="-L -s -f"
+
 VOLUME /data/bitbucket_home
 VOLUME /data/backup_root/bitbucket_home
 VOLUME /data/backup_root/bitbucket_db
