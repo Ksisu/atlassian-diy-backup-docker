@@ -13,7 +13,7 @@ VOLUME /data/backup_archive
 RUN apt update && apt install -y \
   bash \
   rsync \
-  tar \
+  tar && \
   rm -rf /var/lib/apt/lists/*
 WORKDIR /atlassian-diy-backup
 COPY . .
