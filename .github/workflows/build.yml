@@ -12,9 +12,14 @@ jobs:
       - uses: actions/checkout@v1
       - name: Build docker image for Bitbucket
         run: docker build -t ksisu/bitbucket-diy-backup-postgres-rsync-tar ./bitbucket/
+      - name: Build docker image for Jira/Confluence
+        run: docker build -t ksisu/atlassian-common-diy-backup-postgres-rsync-tar ./common/
       - name: Push to DockerHub
         run: |
           docker login -u ksisu -p ${{ secrets.DOCKER_PASSWORD }}
           docker tag ksisu/bitbucket-diy-backup-postgres-rsync-tar ksisu/bitbucket-diy-backup-postgres-rsync-tar:${{ github.sha }}
+          docker tag ksisu/atlassian-common-diy-backup-postgres-rsync-tar ksisu/atlassian-common-diy-backup-postgres-rsync-tar:${{ github.sha }}
           docker push ksisu/bitbucket-diy-backup-postgres-rsync-tar
           docker push ksisu/bitbucket-diy-backup-postgres-rsync-tar:${{ github.sha }}
+          docker push ksisu/atlassian-common-diy-backup-postgres-rsync-tar
+          docker push ksisu/atlassian-common-diy-backup-postgres-rsync-tar:${{ github.sha }}
